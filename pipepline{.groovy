@@ -1,6 +1,6 @@
 pipepline{
     agent any
-    {stages
+    stages{
         stage("Build"){
             steps{
                 echo "Building"
@@ -12,6 +12,16 @@ pipepline{
                     body:"Build was successful"
                 }
             }
-        }    
+        }
+        stage("Test"){
+            steps
+                echo "Testing..."
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "deploying..."
+            }
+        }
     }
 }
