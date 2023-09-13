@@ -43,14 +43,12 @@ pipeline {
             }
             post {
                 success {
-                    // Send a success notification email with logs as attachments
                     emailext subject: 'Successful Security Scan',
                         body: 'Latest build Security Scan Status: Successful',
                         attachLog: true,
                         to: 'dandlamperd@gmail.com'
                 }
                 failure {
-                    // Send a failure notification email with logs as attachments
                     emailext subject: 'Unsuccessful Security Scan',
                         body: 'Latest build Security Scan Status: unsuccessful',
                         attachLog: true,
@@ -63,7 +61,6 @@ pipeline {
             steps {
                 echo 'Running Integration tests on staging environment'
                 sleep(time: 0.5, unit: 'SECONDS')
-                // Include actual steps for integration tests on staging here
             }
         }
 
@@ -71,7 +68,6 @@ pipeline {
             steps {
                 echo 'Deploying to production via AWS EC2 instance'
                 sleep(time: 0.5, unit: 'SECONDS')
-                // Include actual deployment steps here
             }
         }
     }
