@@ -46,13 +46,13 @@ pipeline {
                     emailext subject: 'Successful Security Scan',
                         body: 'Latest build Security Scan Status: Successful',
                         attachLog: true,
-                        to: 'dandlamperd@gmail.com'
+                        to: 'a.abkenar@deakin.edu.au'
                 }
                 failure {
                     emailext subject: 'Unsuccessful Security Scan',
                         body: 'Latest build Security Scan Status: unsuccessful',
                         attachLog: true,
-                        to: 'dandlamperd@gmail.com'
+                        to: 'a.abkenar@deakin.edu.au'
                 }
             }
         }
