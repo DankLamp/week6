@@ -44,15 +44,15 @@ pipeline {
             post {
                 success {
                     // Send a success notification email with logs as attachments
-                    emailext subject: 'Security Scan finished',
-                        body: 'Security scan has succeeded.',
+                    emailext subject: 'Successful Security Scan',
+                        body: 'Latest build Security Scan Status: Successful',
                         attachLog: true,
                         to: 'a.abkenar@deakin.edu.au'
                 }
                 failure {
                     // Send a failure notification email with logs as attachments
-                    emailext subject: 'Security Scan Failed',
-                        body: 'Security scan has failed. Please check the logs for details.',
+                    emailext subject: 'Unsuccessful Security Scan',
+                        body: 'Latest build Security Scan Status: unsuccessful',
                         attachLog: true,
                         to: 'a.abkenar@deakin.edu.au'
                 }
